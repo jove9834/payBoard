@@ -162,6 +162,7 @@
 
     .forget-wrapper {
         text-align: right;
+        height: auto;
     }
 
     .forget {
@@ -239,27 +240,18 @@
         border-left: 0;
     }
 
-    .alieditContainer .sixDigitPassword i.active {}
+    .alieditContainer .sixDigitPassword i.active{background-image: url("https://t.alipayobjects.com/images/rmsweb/T1nYJhXalXXXXXXXXX.gif");background-repeat: no-repeat;background-position: center center; }
+    .alieditContainer .sixDigitPassword b{display:block; margin:.50rem auto .50rem auto; width:.25rem; height:.25rem; overflow:hidden; display:none;/*visibility:hidden;*/ background:#000; border-radius:100%;}
+    .alieditContainer .sixDigitPassword .guangbiao{width:1.5rem; height:1.25rem; position:absolute; display:block; left:0px; top:-1px; border:1px solid rgba(82, 168, 236, .8); border:1px solid #00ffff\9; border-radius: 5px; visibility:visible; -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);}
 
-    .alieditContainer .sixDigitPassword b {
-        display: block;
-        margin: .4rem auto .50rem auto;
-        width: .25rem;
-        height: .25rem;
-        overflow: hidden;
-        display: none;
-        /*visibility:hidden;*/
-        background: #000;
-        border-radius: 100%;
-    }
     /* 键盘 */
 
     .layer-content {
         position: fixed;
         left: 0;
         right: 0;
-        bottom: -10.8rem;
-        height: 10.8rem;
+        bottom: -11.7rem;
+        height: 11.7rem;
         z-index: 33;
         opacity: 0;
     }
@@ -352,6 +344,11 @@ not supported by any browser */
     .loading-box>div {
         font-size: .33rem;
         white-space: nowrap;
+    }
+    
+    #remove img{
+        vertical-align: middle;
+        width: 33%;
     }
 
 </style>
