@@ -1,0 +1,23 @@
+{
+  "name": "pay_board",
+  "version": "1.0.0",
+  "description": "a h5 keyboard to pay",
+  "main": "./libs/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lllluke1993/payBoard.git"
+  },
+  "keywords": [
+    "pay",
+    "keyboard"
+  ],
+  "author": "luke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lllluke1993/payBoard/issues"
+  },
+  "homepage": "https://github.com/lllluke1993/payBoard#readme"
+}
