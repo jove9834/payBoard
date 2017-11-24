@@ -3,11 +3,9 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 本插件基于jq开发，使用前确保全局有$方法。  
 本插件的自适应基于淘宝移动端自适应的规范，确认html的font-size为屏幕分辨率/10;
 #### 示例
-[点击查看例子](https://lllluke1993.github.io/payboard.html)
+[点击查看例子](https://luke93h.github.io/payboard.html)
 
 <p align="center">
-
-  <img src="./example.png" width="426" />
   <img src="./example.gif" width="426" />
 </p>
 
@@ -29,9 +27,9 @@ board.show()
 
 
 #### 事件
-* ##### 通过board.on(name, callBack)来监听特定的事件
-* ##### 每个事件可注册多个监听函数
-* ##### 所有回调函数的this指向实例对象，部分事件的回调函数会有相应的参数传入
+###### 通过board.on(name, callBack)来监听特定的事件
+###### 每个事件可注册多个监听函数
+###### 所有回调函数的this指向实例对象，部分事件的回调函数会有相应的参数传入
 
 * `complete事件`, 输入达到6位数时，回调函数会传入6位密码
 * `forget事件`, 点击忘记密码时的事件，无参
@@ -43,6 +41,9 @@ board.show()
 #### 属性
 
 * `board.inputVal`, 已经输入的密码
+* `board.id`, 输入框最外层dom的id
+* `board.hash`, 输入框最外层dom的id上的hash值
+
 
 作者：luke93  
 链接：https://github.com/lllluke1993/payBoard  
