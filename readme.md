@@ -6,7 +6,7 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 [例子](./README_en-us.md)
 
 <p align="center">
-  <img src="./example.gif" width="926" height="521" />
+  <img src="./example.gif" width="926" />
 </p>
 ## 使用方法
 ```bash
