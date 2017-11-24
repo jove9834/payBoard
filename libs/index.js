@@ -14,7 +14,7 @@
                             '<div class="pay-board-content">' +
                                 '<div class="pay-board-alieditContainer" id="pay-board-payPassword-container">' +
                                     '<div class="pay-board-sixDigitPassword" tabindex="0">' +
-                                        '<i class="active"><b></b></i>' +
+                                        '<i class="pay-board-active"><b></b></i>' +
                                         '<i><b></b></i>' +
                                         '<i><b></b></i>' +
                                         '<i><b></b></i>' +
