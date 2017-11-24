@@ -126,7 +126,6 @@
         $(this.id+" .pay-board-sixDigitPassword b").css({ "display": "none" });
         $(this.id+" .pay-board-guangbiao").css({ "left": '0rem' });
         $(this.id+" .pay-board-sixDigitPassword").find("i").eq(0).addClass("pay-board-active")
-
     }
     payBoard.prototype.on = function (type,cb) {
         if(this._plugins[type]){
