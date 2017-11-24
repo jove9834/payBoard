@@ -1,6 +1,6 @@
 ## 使用方法
 
-var board = new payBoard()
+var board = new payBoard()  
 board.show()
 
 #### 方法
