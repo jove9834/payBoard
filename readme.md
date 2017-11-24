@@ -4,6 +4,10 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 本插件的自适应基于淘宝移动端自适应的规范，确认html的font-size为屏幕封边率/10;
 #### 示例
 [例子](./README_en-us.md)
+
+<p align="center">
+  <img src="./example.gif" width="926" height="521" />
+</p>
 ## 使用方法
 ```bash
 var board = new payBoard() 
