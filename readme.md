@@ -5,9 +5,9 @@ board.show()
 
 #### 方法
 
-|  |  |
 |:-------------:|:-------------|
-| [users/mobile](#users-mobile) | 获取用户手机号 |
+| board.show(duration) | 显示输入框 |
+    | board.show(duration) | 显示输入框 |    
 
 
 #### 事件
