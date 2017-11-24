@@ -3,7 +3,7 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 本插件基于jq开发，使用前确保全局有$方法。  
 本插件的自适应基于淘宝移动端自适应的规范，确认html的font-size为屏幕封边率/10;
 #### 示例
-[点击查看例子](./index.html)
+[点击查看例子](https://lllluke1993.github.io/payboard.html)
 
 <p align="center">
   <img src="./example.gif" width="426" />
