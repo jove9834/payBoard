@@ -1,0 +1,219 @@
+
+    .pay-board-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+    .pay-board-layer {
+        display: none;
+    }
+    .pay-board-wrapper{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: -11.7rem;
+        height: 11.7rem;
+        z-index: 33;
+        opacity: 0;
+    }
+    .pay-board-box {
+        background-color: #fff;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .pay-board-box .pay-board-head {
+        position: relative;
+        text-align: center;
+        height: 1.25rem;
+        font-size: .416667rem;
+        color: #333;
+        padding-top: .386667rem;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .pay-board-content {
+        padding: .44rem;
+        text-align: center;
+    }
+
+    .pay-board-pw {
+        width: 7.111111rem;
+        height: 1.25rem;
+        border: 1px solid #eee;
+    }
+
+    .pay-board-pw::-webkit-input-placeholder {
+        color: #999;
+    }
+
+    .pay-board-btn {
+        width: 7.083333rem;
+        height: 1.180556rem;
+        background-color: #008474;
+        color: #fff;
+        border-radius: .138889rem;
+        line-height: 1.1rem;
+        font-size: .416667rem;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: .416667rem;
+    }
+
+    .pay-board-btn.disabled {
+        background-color: rgba(0, 0, 0, 0.2)
+    }
+
+    .pay-board-forget-wrapper {
+        text-align: right;
+        height: auto;
+    }
+
+    .pay-board-forget {
+        font-size: .333333rem;
+        color: #008474;
+    }
+
+    .pay-board-back {
+        width: .25rem;
+    }
+
+    .pay-board-back-wrapper {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        left: .388889rem;
+        top: .377778rem;
+        text-align: left;
+    }
+    .pay-board-alieditContainer {
+        position: relative;
+        height: 1.4rem;
+        margin-bottom: .347222rem;
+        margin-top: 0.3rem;
+        overflow: hidden;
+    }
+
+    .pay-board-alieditContainer .pay-board-sixDigitPassword {
+        width: 9.12rem;
+        height: 1.25rem;
+        font-size: 0px;
+        cursor: text;
+        background: #fff;
+        outline: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 2px solid #d2d2d2;
+        border-radius: 5px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .pay-board-alieditContainer .pay-board-sixDigitPassword i {
+        width: 1.48rem;
+        height: 1.15rem;
+        font-size: .222222rem;
+        float: left;
+        display: block;
+        padding: .055556rem 0;
+        border-left: 1px solid #eeeeee;
+    }
+
+    .pay-board-alieditContainer .pay-board-sixDigitPassword i:first-child {
+        border-left: 0;
+    }
+
+    .pay-board-alieditContainer .pay-board-sixDigitPassword i.pay-board-active{
+        background-image: url("https://t.alipayobjects.com/images/rmsweb/T1nYJhXalXXXXXXXXX.gif");
+        background-repeat: no-repeat;
+        background-position: center center; 
+    }
+    .pay-board-alieditContainer .pay-board-sixDigitPassword b{
+        display:block; 
+        margin:.41rem auto .50rem auto; 
+        width:.25rem; 
+        height:.25rem; 
+        border-radius: 1rem;
+        overflow:hidden; 
+        display:none;/*visibility:hidden;*/ 
+        background:#000; 
+        border-radius:100%;
+    }
+    .pay-board-alieditContainer .pay-board-sixDigitPassword .pay-board-guangbiao{
+        width:1.5rem;
+        height:1.25rem; 
+        position:absolute;
+        display:block;
+        left:0px;
+        top:-1px;
+        border:1px solid rgba(82, 168, 236, .8);
+        border:1px solid #00ffff\9; 
+        border-radius: 5px; 
+        visibility:visible; 
+        -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+
+    /* 键盘 */
+
+    .pay-board-form-edit {
+        width: 100%;
+        background-color: #eeeeee;
+    }
+
+    .pay-board-form-edit>div {
+        margin-bottom: 1px;
+        border-right: 1px solid #eee;
+        float: left;
+        width: 33.3%;
+        height: 1.527778rem;
+        text-align: center;
+        color: #333;
+        line-height: 1.527778rem;
+        font-size: .611111rem;
+        background-color: #fff;
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Chrome/Safari/Opera */
+        -khtml-user-select: none;
+        /* Konqueror */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+not supported by any browser */
+    }
+
+    .pay-board-form-edit>div.pay-board-touched {
+        background-color: #ccc;
+    }
+
+    .pay-board-form-edit>div:nth-child(3n) {
+        border-right-width: 0;
+    }
+
+    .pay-board-form-edit>div:last-child {
+        background-color: #eee;
+    }
+
+    .pay-board-clearfix:after {
+        content: "\200B";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .pay-board-clearfix {
+        *zoom: 1;
+    }
+    
+    #pay-board-remove img{
+        vertical-align: middle;
+        width: 33%;
+    }
