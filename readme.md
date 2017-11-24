@@ -5,6 +5,7 @@ board.show()
 
 #### 方法
 
+|  |  |
 |:-------------:|:-------------|
 | board.show(duration) | 显示输入框 |
     | board.show(duration) | 显示输入框 |    
