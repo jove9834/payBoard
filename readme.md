@@ -1,14 +1,14 @@
 ## 使用方法
 
-var board = new payBoard()  
-board.show()
+``var board = new payBoard()`` 
+``board.show()``
 
 #### 方法
 
 |  |  |
 |:-------------:|:-------------|
-| board.show(duration) | 显示输入框 |
-   ``This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,``
+| board.show(duration) | 显示输入框       |
+|  ``duration(可选):``  | 时间（默认200ms）|
 
 
 
@@ -19,7 +19,7 @@ board.show()
 | [users/mobile/put](#users-mobile-put) | 上传用户手机号 |
 
 
-## 属性
+#### 属性
 
 * #### users/mobile
 
