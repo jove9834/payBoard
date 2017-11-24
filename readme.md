@@ -6,8 +6,26 @@
 #### 方法
 
 |  |  |
+|:-------------:|:-------------|
 | board.show(duration) | 显示输入框       |
 |  ``duration(可选):``  | 时间（默认200ms）|
+
+| board.hide(duration) | 隐藏输入框       |
+|  ``duration(可选):``  | 时间（默认200ms）|
+
+
+| board.on(name, fn) | 显示输入框       |
+|  ``name(可选):``  | 事件名 |
+|  ``fn(可选):``  | 回调函数 |
+
+| board.reset() | 重置输入框       |
+
+| board.input(num) | 程序输入数字       |
+|  ``num(必填):``  | 要输入的数字|
+
+| board.delete(num) | 删除数字       |
+|  ``num(可选):``  | 要删除的位数|
+
 
 
 
