@@ -6,7 +6,7 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 [例子](./README_en-us.md)
 
 <p align="center">
-  <img src="./example.gif" width="926" />
+  <img src="./example.gif" width="426" />
 </p>
 ## 使用方法
 ```bash
@@ -41,7 +41,7 @@ board.show()
 
 * `board.inputVal`, 已经输入的密码
 
-作者：luke93
-链接：https://github.com/lllluke1993/payBoard
-來源：github
+作者：luke93  
+链接：https://github.com/lllluke1993/payBoard  
+來源：github  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
