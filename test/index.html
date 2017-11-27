@@ -9,7 +9,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no" />
-    <link rel="stylesheet" type="" href="../libs/index.css">
 </head>
 <style type="text/css">
     body{
@@ -49,12 +48,12 @@
 <div class="container">
     <div class="btn">点击支付</div>
 </div>
-<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
-<script src="../libs/index.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+<script src="../dist/payboard.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $('html').css({ 'font-size': $(window).width()/10 + 'px' })
-        var board = new payBoard()
+        var board = new PayBoard()
         board.on('input',function(val){
             console.log('input',val, this.inputVal)
         })
@@ -77,6 +76,7 @@
             board.hide()
         })
         $('.btn').click(function(){
+            console.log('show')
             board.show()
         })
         window.board = board

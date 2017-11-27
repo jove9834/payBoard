@@ -1,5 +1,5 @@
-# payBoard
-payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能。  
+# PayBoard
+PayBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能。  
 本插件基于jq开发，使用前确保全局有$方法。  
 本插件的自适应基于淘宝移动端自适应的规范，确认html的font-size为屏幕分辨率/10;
 #### 示例
@@ -11,7 +11,8 @@ payBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 
 ## 使用方法
 ```bash
-var board = new payBoard() 
+<script src="./payboard.min.js"></script>
+var board = new PayBoard() 
 board.show()
 ```
 

@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/lllluke1993/payBoard/issues"
   },
-  "homepage": "https://github.com/lllluke1993/payBoard#readme"
+  "homepage": "https://github.com/lllluke1993/payBoard#readme",
+  "devDependencies": {
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
 }
