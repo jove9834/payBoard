@@ -9,7 +9,7 @@
         } else if (query instanceof HTMLElement){
             dom = [query]
         }else{
-            query = query
+            dom = query
         }
          
         // 字符串转化为dom
@@ -142,6 +142,7 @@
             hide: function (interval, sp, fn) {
                 forEach(function (item, index) {
                     animate(item, { opacity: 0 }, interval, sp, fn)
+                    item.style.display = 'none'
                 })
                 return actions
             }, 
@@ -190,11 +191,28 @@
                 return $(nodes)
             },
             prevAll: function() {
-                debugger
                 function getSiblingElems(elem) {
                     var nodes = [];
                     var _elem = elem;
                     while ((elem = elem.previousSibling)) {
+                        if (elem.nodeType == 1) {
+                            nodes.push(elem);
+                        }
+                    }
+                    return nodes
+                }
+                var nodes = []
+                forEach(function (item, index) {
+                    getSiblingElems(item).forEach(function (_item, _index) {
+                        nodes.indexOf(_item) === -1 && nodes.push(_item)
+                    })
+                })
+                return $(nodes)
+            },
+            nextAll: function () {
+                function getSiblingElems(elem) {
+                    var nodes = [];
+                    while ((elem = elem.nextSibling)) {
                         if (elem.nodeType == 1) {
                             nodes.push(elem);
                         }
