@@ -1,5 +1,218 @@
 (function(){
     var box = ''
+    // 用于脱离jq的依赖，在保障移动端兼容性的前提下，完成一些简单的jq功能
+    var $ = function(query){
+        var dom
+        // 获取dom节点
+        if (typeof query === 'string'){
+            dom = document.querySelectorAll(query)
+        } else if (query instanceof HTMLElement){
+            dom = [query]
+        }else{
+            query = query
+        }
+         
+        // 字符串转化为dom
+        function parseDom(arg) {
+            var objE = document.createElement("div");
+            objE.innerHTML = arg;
+            return objE.childNodes;
+        };
+
+        // 遍历类数组对象
+        function forEach(cb){
+            var _dom = dom || []
+            Array.prototype.forEach.call(_dom, function (item, index) {
+                cb(item, index)
+            })
+        }
+        
+        // 动画函数
+        function animate(obj, json, time, fn) {
+            time = time || 300
+            var sp = 5/time
+            clearInterval(obj.timer);
+            //var k = 0;
+            //var j = 0;
+            function getStyle(obj, arr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[arr];    //针对ie
+                } else {
+                    return document.defaultView.getComputedStyle(obj, null)[arr];
+                }
+            }
+            obj.timer = setInterval(function() {
+                var flag = true;
+                for (var arr in json) {
+                    var icur = 0;
+                    if (arr == "opacity") {
+                        icur = Math.round(parseFloat(getStyle(obj, arr)) * 100);
+                    } else {
+                        icur = parseInt(getStyle(obj, arr));
+                    }
+                    var speed
+
+                    if (arr == "opacity") {
+                        speed = (json[arr]*100 - icur) * sp;
+                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                    } else {
+                        speed = (json[arr] - icur) * sp;
+                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                    }
+                   
+                    
+                    if (icur != json[arr]) {
+                        flag = false;
+                    }
+                    if (arr == 'opacity') {
+                        obj.style.opacity = (icur + speed) / 100;
+                    } else {
+                        obj.style[arr] = icur + speed + "px";
+                    }
+                }
+
+                if (flag) {
+                    clearInterval(obj.timer);
+                    if (fn) {
+                        fn();
+                    }
+                }
+            }, 5);
+        }
+        var actions = {
+            html: function (htmlStr) {
+                forEach(function (item, index) {
+                    item.innerHTML = parseDom(htmlStr)[0]
+                })
+                return actions
+            },
+            append: function(htmlStr){
+                forEach(function (item, index) {
+                    item.appendChild(parseDom(htmlStr)[0])
+                })
+                return actions
+            },
+            on: function(event, callback){
+                forEach(function (item, index) {
+                    if (item.addEventListener){
+                        item.addEventListener(event, callback)
+                    } else if (item.attachEvent){
+                        item.attachEvent('on' + event, callback)
+                    }
+                })
+                var remove = function (){
+                    forEach(function (item, index) {
+                        if (item.addEventListener) {
+                            item.removeEventListener(event, callback)
+                        } else if (item.attachEvent) {
+                            item.detachEvent('on' + event, callback)
+                        }
+                    })
+                }
+                return actions
+            },
+            addClass: function(className){
+                forEach(function (item, index) {
+                    var classList = item.classList
+                    classList.add(className)
+                })
+                return actions
+            },
+            removeClass: function (className) {
+                forEach(function (item, index) {
+                    var classList = item.classList
+                    classList.remove(className)
+                })
+                return actions
+            },
+            css: function(options){
+                forEach(function (item, index) {
+                    for (var attr in options) {
+                        item.style[attr] = options[attr];
+                    }
+                })
+                return actions
+            },
+            show: function (interval, sp, fn){
+                forEach(function (item, index) {
+                    item.style.display='block'
+                })
+                return actions
+            },
+            hide: function (interval, sp, fn) {
+                forEach(function (item, index) {
+                    animate(item, { opacity: 0 }, interval, sp, fn)
+                })
+                return actions
+            }, 
+            animate: function (options, time, fn ) {
+                forEach(function (item, index) {
+                    animate(item, options, time, fn)
+                })
+                return actions
+            },
+            find: function(subQuery){
+                var nodes = []
+                forEach(function(item, index){
+                    var subDoms = item.querySelectorAll(subQuery)
+                    Array.prototype.forEach.call(subDoms, function(_item){
+                        nodes.push(_item)
+                    })
+                })
+                return $(nodes)
+            },
+            eq: function(index){
+                return $(dom[index])
+            },
+            siblings: function(){
+                function getSiblingElems(elem) {
+                    var nodes = [];
+                    var _elem = elem;
+                    while ((elem = elem.previousSibling)) {
+                        if (elem.nodeType == 1) {
+                            nodes.push(elem);
+                        }
+                    }
+                    var elem = _elem;
+                    while ((elem = elem.nextSibling)) {
+                        if (elem.nodeType == 1) {
+                            nodes.push(elem);
+                        }
+                    }
+                    return nodes
+                }
+                var nodes = []
+                forEach(function (item, index) {
+                    getSiblingElems(item).forEach(function(_item, _index){
+                        nodes.indexOf(_item) === -1 && nodes.push(_item)
+                    })
+                })
+                return $(nodes)
+            },
+            prevAll: function() {
+                debugger
+                function getSiblingElems(elem) {
+                    var nodes = [];
+                    var _elem = elem;
+                    while ((elem = elem.previousSibling)) {
+                        if (elem.nodeType == 1) {
+                            nodes.push(elem);
+                        }
+                    }
+                    return nodes
+                }
+                var nodes = []
+                forEach(function (item, index) {
+                    getSiblingElems(item).forEach(function (_item, _index) {
+                        nodes.indexOf(_item) === -1 && nodes.push(_item)
+                    })
+                })
+                return $(nodes)
+            },
+            dom: dom
+        }
+        return actions
+    }
     function payBoard() {
         var hash = (new Date).getTime()
         var box =   '<div class="pay-board-layer" id="pay-board-box-' + hash + '">' +
@@ -71,7 +284,7 @@
         };
         var _this = this
         // 数字键盘-数字
-        $(this.id+' .pay-board-form-edit .pay-board-num').on('touchstart', function () {
+        $(this.id+' .pay-board-form-edit .pay-board-num').on('touchstart', function() {
             $(this).addClass('pay-board-touched')
             // 触发input插件
             if (_this.inputVal.length >= 6) {

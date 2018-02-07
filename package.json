@@ -4,7 +4,7 @@
   "description": "a h5 keyboard to pay",
   "main": "./libs/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lllluke1993/payBoard#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.0.4",
