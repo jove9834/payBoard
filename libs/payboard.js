@@ -49,7 +49,6 @@
                            units = options[attr].match(/[^\d+-.]+/)
                            unit = (units && units[0]) || 'px'
                         }
-                        console.log(attr, unit,parseFloat(initValus[attr]) + ( parseFloat(options[attr]) - parseFloat(initValus[attr]) ) * fraction)
                         obj.style[attr] = parseFloat(initValus[attr]) + ( parseFloat(options[attr]) - parseFloat(initValus[attr]) ) * fraction + unit
                     }
                     setTimeout(proress, Math.min(1, time-elapsed))
