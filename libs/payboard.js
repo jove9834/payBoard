@@ -28,56 +28,48 @@
         }
         
         // 动画函数
-        function animate(obj, json, time, fn) {
-            time = time || 300
-            var sp = 5/time
-            clearInterval(obj.timer);
-            //var k = 0;
-            //var j = 0;
-            function getStyle(obj, arr) {
-                if (obj.currentStyle) {
-                    return obj.currentStyle[arr];    //针对ie
-                } else {
-                    return document.defaultView.getComputedStyle(obj, null)[arr];
+        function animate(obj, options, time, fn) {
+            time = time || 500
+            var ease = Math.sqrt
+            var start = (new Date()).getTime()
+            var initValus = {}
+            var unit = '', units
+            for(attr in options){
+                initValus[attr] = getStyle(obj, attr)
+            }
+            proress()
+            function proress(){
+                var elapsed = (new Date()).getTime() - start
+                var fraction = elapsed/time
+                if( fraction < 1){
+                    for(attr in options){
+                        if( attr == 'opacity'){
+                            unit = ''
+                        }else{
+                           units = options[attr].match(/[^\d+-.]+/)
+                           unit = (units && units[0]) || 'px'
+                        }
+                        console.log(attr, unit,parseFloat(initValus[attr]) + ( parseFloat(options[attr]) - parseFloat(initValus[attr]) ) * fraction)
+                        obj.style[attr] = parseFloat(initValus[attr]) + ( parseFloat(options[attr]) - parseFloat(initValus[attr]) ) * fraction + unit
+                    }
+                    setTimeout(proress, Math.min(1, time-elapsed))
+                }else{
+                    
+                    for(attr in options){
+                        obj.style[attr] = options[attr]
+                        if(fn){
+                            fn()
+                        }
+                    }
                 }
             }
-            obj.timer = setInterval(function() {
-                var flag = true;
-                for (var arr in json) {
-                    var icur = 0;
-                    if (arr == "opacity") {
-                        icur = Math.round(parseFloat(getStyle(obj, arr)) * 100);
-                    } else {
-                        icur = parseInt(getStyle(obj, arr));
-                    }
-                    var speed
-
-                    if (arr == "opacity") {
-                        speed = (json[arr]*100 - icur) * sp;
-                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-                    } else {
-                        speed = (json[arr] - icur) * sp;
-                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-                    }
-                   
-                    
-                    if (icur != json[arr]) {
-                        flag = false;
-                    }
-                    if (arr == 'opacity') {
-                        obj.style.opacity = (icur + speed) / 100;
-                    } else {
-                        obj.style[arr] = icur + speed + "px";
-                    }
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];    //针对ie
+                } else {
+                    return document.defaultView.getComputedStyle(obj, null)[attr];
                 }
-
-                if (flag) {
-                    clearInterval(obj.timer);
-                    if (fn) {
-                        fn();
-                    }
-                }
-            }, 5);
+            }
         }
         var actions = {
             html: function (htmlStr) {
@@ -141,7 +133,6 @@
             },
             hide: function (interval, sp, fn) {
                 forEach(function (item, index) {
-                    animate(item, { opacity: 0 }, interval, sp, fn)
                     item.style.display = 'none'
                 })
                 return actions
