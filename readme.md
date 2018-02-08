@@ -31,9 +31,9 @@ board.show()
 
 
 #### 事件
-> 通过board.on(name, callBack)来监听特定的事件
-> 每个事件可注册多个监听函数
-> 所有回调函数的this指向实例对象，部分事件的回调函数会有相应的参数传入
+> 通过board.on(name, callBack)来监听特定的事件   
+> 每个事件可注册多个监听函数   
+> 所有回调函数的this指向实例对象，部分事件的回调函数会有相应的参数传入  
 
 * `complete事件`, 输入达到6位数时，回调函数会传入6位密码
 * `forget事件`, 点击忘记密码时的事件，无参
@@ -44,9 +44,9 @@ board.show()
 
 #### 属性
 
-* `board.inputVal`, 已经输入的密码
-* `board.id`, 输入框最外层dom的id
-* `board.hash`, 输入框最外层dom的id上的hash值
+* `board.inputVal`, 已经输入的密码  
+* `board.id`, 输入框最外层dom的id  
+* `board.hash`, 输入框最外层dom的id上的hash值  
 
 
 作者：luke  
