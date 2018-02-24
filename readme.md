@@ -47,6 +47,4 @@ board.show()
 
 
 作者：luke  
-链接：https://github.com/luke93h/payBoard  
-來源：github  
 许可证: MIT
