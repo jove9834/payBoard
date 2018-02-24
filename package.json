@@ -4,7 +4,8 @@
   "description": "a h5 keyboard to pay",
   "main": "./libs/index.js",
   "scripts": {
-    "build": "gulp js"
+    "build": "gulp js",
+    "css-build": "gulp css"
   },
   "repository": {
     "type": "git",
