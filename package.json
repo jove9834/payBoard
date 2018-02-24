@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lllluke1993/payBoard.git"
+    "url": "https://github.com/lllluke1993/payBoard.git"
   },
   "keywords": [
     "pay",
     "keyboard"
   ],
   "author": "luke",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lllluke1993/payBoard/issues"
   },
