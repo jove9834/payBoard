@@ -166,6 +166,7 @@
     }
 
     .pay-board-form-edit>div {
+        box-sizing: border-box;
         margin-bottom: 1px;
         border-right: 1px solid #eee;
         float: left;

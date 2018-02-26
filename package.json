@@ -1,6 +1,6 @@
 {
   "name": "pay-board",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a h5 keyboard to pay",
   "scripts": {
     "build": "gulp build",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lllluke1993/payBoard#readme",
   "devDependencies": {
+    "through2": "^2.0.3",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
@@ -32,7 +33,6 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "through2": "^2.0.3"
   },
   "files": [
     "dist",
