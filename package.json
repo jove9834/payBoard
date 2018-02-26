@@ -2,14 +2,13 @@
   "name": "pay_board",
   "version": "1.0.0",
   "description": "a h5 keyboard to pay",
-  "main": "./libs/index.js",
   "scripts": {
-    "build": "gulp js",
-    "css-build": "gulp css"
+    "build": "gulp build",
+    "build:css": "gulp css"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lllluke1993/payBoard.git"
+    "url": "https://github.com/luke93h/payBoard"
   },
   "keywords": [
     "pay",
@@ -29,6 +28,13 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
     "gulp-uglify": "^3.0.0"
-  }
+  },
+  "dependencies": {
+    "through2": "^2.0.3"
+  },
+  "files": [
+    "dist"
+  ]
 }
