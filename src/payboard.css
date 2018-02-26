@@ -14,14 +14,15 @@
         position: fixed;
         left: 0;
         right: 0;
-        bottom: -468px;
-        height: 468px;
+        bottom: -440px;
+        height: 440px;
         z-index: 33;
         opacity: 0;
     }
     .pay-board-box {
         background-color: #fff;
         border-bottom: 1px solid #eeeeee;
+        height: 196px;
     }
 
     .pay-board-box .pay-board-head {
@@ -91,14 +92,13 @@
     .pay-board-alieditContainer {
         position: relative;
         height: 56px;
-        margin-bottom: 15px;
         margin-top: 12px;
         overflow: hidden;
     }
 
     .pay-board-alieditContainer .pay-board-sixDigitPassword {
         width: 95%;
-        height: 50px;
+        height: 44px;
         font-size: 0px;
         cursor: text;
         background: #fff;
@@ -145,7 +145,7 @@
     }
     .pay-board-alieditContainer .pay-board-sixDigitPassword .pay-board-guangbiao{
         width:16.666%;
-        height:50px; 
+        height:44px; 
         position:absolute;
         display:block;
         left:0px;
@@ -163,6 +163,7 @@
     .pay-board-form-edit {
         width: 100%;
         background-color: #eeeeee;
+        height: 244px;
     }
 
     .pay-board-form-edit>div {
@@ -205,7 +206,7 @@ not supported by any browser */
     }
 
     .pay-board-clearfix:after {
-        content: "\200B";
+        content: " ";
         display: block;
         height: 0;
         clear: both;

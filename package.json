@@ -1,6 +1,6 @@
 {
   "name": "pay-board",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a h5 keyboard to pay",
   "scripts": {
     "build": "gulp build",
