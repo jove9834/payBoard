@@ -9,12 +9,19 @@ PayBoard 是一个移动端ui插件，实现了支付时调用h5键盘的功能�
 </p>
 
 ## 使用方法
-###### 压缩后的代码在dist文件夹中，可自行下载并引入即可
+###### 全局引用
 ```bash
 <script src="./payboard.min.js"></script>
 var board = new PayBoard() 
 board.show()
-```
+```  
+###### 模块引用  
+
+```bash
+var PayBoard = require('pay-board')
+var board = new PayBoard() 
+board.show()
+```  
 
 
 #### 方法
