@@ -1,6 +1,6 @@
 {
   "name": "pay-board",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a h5 keyboard to pay",
   "scripts": {
     "build": "gulp build",
@@ -35,6 +35,7 @@
     "through2": "^2.0.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.js"
   ]
 }
